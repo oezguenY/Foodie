@@ -8,10 +8,12 @@
 import UIKit
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var tableView: UITableView!
     
-   let data = DataSet()
+    @IBOutlet weak var tableView: UITableView!
+
+    
+    let data = DataSet()
+    var selectedCategory: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,18 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCategory = data.categories[indexPath.row].title
+        performSegue(withIdentifier: "toRecipesSelection", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? RecipesSelectionVC {
+            destination.passedCategory = selectedCategory
+        }
+    }
+ 
 }
 

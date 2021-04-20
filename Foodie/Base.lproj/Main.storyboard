@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -81,14 +82,112 @@
                     <view key="view" contentMode="scaleToFill" id="cdB-0G-1DY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-bj-vQm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ntc-Vu-kOD">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeCell" id="sg6-23-S5p" customClass="RecipeCell" customModule="Foodie" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kbv-Qz-HI8">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger4" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-vN-9Gg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tNP-vN-9Gg" secondAttribute="bottom" id="4Ks-U6-QV5"/>
+                                                <constraint firstItem="tNP-vN-9Gg" firstAttribute="top" secondItem="Kbv-Qz-HI8" secondAttribute="top" id="REw-Xq-YGT"/>
+                                                <constraint firstAttribute="trailing" secondItem="tNP-vN-9Gg" secondAttribute="trailing" id="cm0-kh-tTv"/>
+                                                <constraint firstItem="tNP-vN-9Gg" firstAttribute="leading" secondItem="Kbv-Qz-HI8" secondAttribute="leading" id="xmT-tg-6cn"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="150" height="150"/>
+                                        <connections>
+                                            <outlet property="recipeImage" destination="tNP-vN-9Gg" id="siH-r5-jcO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TsS-xe-k0s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TsS-xe-k0s" firstAttribute="trailing" secondItem="kZL-bj-vQm" secondAttribute="trailing" id="f8z-IN-nvt"/>
+                            <constraint firstItem="kZL-bj-vQm" firstAttribute="leading" secondItem="TsS-xe-k0s" secondAttribute="leading" id="gOy-2x-AL1"/>
+                            <constraint firstItem="TsS-xe-k0s" firstAttribute="bottom" secondItem="kZL-bj-vQm" secondAttribute="bottom" id="iD5-Zb-7HT"/>
+                            <constraint firstItem="kZL-bj-vQm" firstAttribute="top" secondItem="TsS-xe-k0s" secondAttribute="top" id="jff-uR-Qmp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LUd-mL-tCz"/>
+                    <connections>
+                        <outlet property="collectionView" destination="kZL-bj-vQm" id="G80-GV-lnk"/>
+                        <segue destination="eaE-tN-N0P" kind="show" identifier="toRecipeSelection" id="ufB-aq-Dz9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBS-FG-RZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797" y="75"/>
+            <point key="canvasLocation" x="1795.6521739130437" y="75"/>
+        </scene>
+        <!--Recipe DetailVC-->
+        <scene sceneID="E7h-kf-8V2">
+            <objects>
+                <viewController id="eaE-tN-N0P" customClass="RecipeDetailVC" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QuH-MW-wW2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pasta2" translatesAutoresizingMaskIntoConstraints="NO" id="VSp-Uf-doi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="ifW-0a-SsQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avocado Pasta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTH-w6-OGT">
+                                <rect key="frame" x="132.33333333333337" y="304" width="149.66666666666663" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GC7-et-yDB">
+                                <rect key="frame" x="20" y="350.66666666666669" width="374" height="21"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bWh-yy-rzk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tTH-w6-OGT" firstAttribute="top" secondItem="VSp-Uf-doi" secondAttribute="bottom" constant="35" id="6xT-88-7k0"/>
+                            <constraint firstItem="tTH-w6-OGT" firstAttribute="centerX" secondItem="QuH-MW-wW2" secondAttribute="centerX" id="G21-HV-GKz"/>
+                            <constraint firstItem="bWh-yy-rzk" firstAttribute="trailing" secondItem="VSp-Uf-doi" secondAttribute="trailing" id="Guj-LD-GlL"/>
+                            <constraint firstItem="GC7-et-yDB" firstAttribute="top" secondItem="tTH-w6-OGT" secondAttribute="bottom" constant="18" id="TQR-Ra-eOI"/>
+                            <constraint firstItem="bWh-yy-rzk" firstAttribute="trailing" secondItem="GC7-et-yDB" secondAttribute="trailing" constant="20" id="djM-8w-9tJ"/>
+                            <constraint firstItem="VSp-Uf-doi" firstAttribute="top" secondItem="bWh-yy-rzk" secondAttribute="top" id="eCU-pZ-2p1"/>
+                            <constraint firstItem="GC7-et-yDB" firstAttribute="leading" secondItem="bWh-yy-rzk" secondAttribute="leading" constant="20" id="fjJ-g2-TnV"/>
+                            <constraint firstItem="VSp-Uf-doi" firstAttribute="leading" secondItem="bWh-yy-rzk" secondAttribute="leading" id="ktL-7F-zJR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bLi-m8-NoH"/>
+                    <connections>
+                        <outlet property="recipeImg" destination="VSp-Uf-doi" id="ToK-6X-x3w"/>
+                        <outlet property="recipeInstructions" destination="GC7-et-yDB" id="D4a-xd-c03"/>
+                        <outlet property="recipeTitle" destination="tTH-w6-OGT" id="e1L-9a-Apk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eju-VX-J4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2633.3333333333335" y="76.630434782608702"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qqx-BE-lzt">
@@ -111,6 +210,8 @@
     </scenes>
     <resources>
         <image name="burger0" width="1052" height="699"/>
+        <image name="burger4" width="800" height="800"/>
+        <image name="pasta2" width="634" height="951"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

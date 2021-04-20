@@ -95,6 +95,29 @@ class DataSet {
         Recipe(title: "Club Sandwich", instructions: "Toast the bread in a toaster, or under a broiler on both sides. Cut the lettuce leaves in half crosswise and form into 8 neat stacks. \nTo make a double-decker club: On a clean work surface, arrange 3 bread slices in a row. Spread 1 tablespoon mayonnaise over 1 side of each bread slice. Place a lettuce stack on top of the first bread slice, top with 2 tomato slices, and season with salt and pepper, to taste.", imageName: "sandwich6"),
     ]
     
+    
+//    func getRecipes(title: String) -> [Recipe] {
+//        switch title {
+//        case "Burgers":
+//            return burgers
+//        case "Pasta":
+//            return pasta
+//        case "Pizza":
+//            return pizza
+//        case "Salads":
+//            return salads
+//        case "Sandwiches":
+//            return sandwiches
+//        default:
+//            return burgers
+//        }
+//    }
+//
+//
+//
+    
+    
+    
     func getRecipes(forCategoryTitle title:String) -> [Recipe] {
         switch title {
         case "Burgers":

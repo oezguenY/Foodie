@@ -18,6 +18,8 @@
 		E3BCABD7262EE5A100B55BAC /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCABD6262EE5A100B55BAC /* DataSet.swift */; };
 		E3BCAC04262F018A00B55BAC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC03262F018A00B55BAC /* CategoryCell.swift */; };
 		E3BCAC09262F0DAE00B55BAC /* RecipesSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC08262F0DAE00B55BAC /* RecipesSelectionVC.swift */; };
+		E3BCAC0C262F19A500B55BAC /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC0B262F19A500B55BAC /* RecipeCell.swift */; };
+		E3BCAC0F262F3E8F00B55BAC /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC0E262F3E8F00B55BAC /* RecipeDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E3BCABD6262EE5A100B55BAC /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		E3BCAC03262F018A00B55BAC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		E3BCAC08262F0DAE00B55BAC /* RecipesSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSelectionVC.swift; sourceTree = "<group>"; };
+		E3BCAC0B262F19A500B55BAC /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		E3BCAC0E262F3E8F00B55BAC /* RecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E3BCAC03262F018A00B55BAC /* CategoryCell.swift */,
+				E3BCAC0B262F19A500B55BAC /* RecipeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			children = (
 				E3BCABBC262EE46300B55BAC /* HomeVC.swift */,
 				E3BCAC08262F0DAE00B55BAC /* RecipesSelectionVC.swift */,
+				E3BCAC0E262F3E8F00B55BAC /* RecipeDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				E3BCABD7262EE5A100B55BAC /* DataSet.swift in Sources */,
 				E3BCABBD262EE46300B55BAC /* HomeVC.swift in Sources */,
 				E3BCABB9262EE46300B55BAC /* AppDelegate.swift in Sources */,
+				E3BCAC0F262F3E8F00B55BAC /* RecipeDetailVC.swift in Sources */,
+				E3BCAC0C262F19A500B55BAC /* RecipeCell.swift in Sources */,
 				E3BCABD4262EE57100B55BAC /* RecipeModel.swift in Sources */,
 				E3BCAC04262F018A00B55BAC /* CategoryCell.swift in Sources */,
 				E3BCAC09262F0DAE00B55BAC /* RecipesSelectionVC.swift in Sources */,
